@@ -23,8 +23,8 @@
 </template>
 
 <script setup>
-import "@/components/ef/index.css";
-import draggable from "vuedraggable";
+import "easyflow-v3/src/components/ef/index.css";
+// import draggable from '../../../../vuedraggable/src/vuedraggable'
 // import { jsPlumb } from 'jsplumb'
 // 使用修改后的jsplumb
 import "./jsplumb";
@@ -35,8 +35,8 @@ import {
   jsplumbSourceOptions,
   jsplumbSourceOptions2,
   jsplumbTargetOptions,
-} from "@/components/ef/mixins";
-import flowNode from "@/components/ef/node";
+} from "easyflow-v3/src/components/ef/mixins";
+import flowNode from "easyflow-v3/src/components/ef/node";
 import lodash from "lodash-es";
 import {
   reactive,

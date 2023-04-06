@@ -36,8 +36,8 @@
   </div>
 </template>
 <script setup>
-import "@/components/ef/index.css";
-import draggable from "vuedraggable";
+import "easyflow-v3/src/components/ef/index.css";
+// import draggable from '../../../../vuedraggable/src/vuedraggable'
 // import { jsplumb } from 'jsplumb'
 // 使用修改后的jsplumb
 import "./jsplumb";
@@ -47,13 +47,13 @@ import {
   jsplumbSourceOptions,
   jsplumbSourceOptions2,
   jsplumbTargetOptions,
-} from "@/components/ef/mixins";
-import flowNode from "@/components/ef/node";
-import NodeMenu from "@/components/ef/node_menu";
-import FlowHelp from "@/components/ef/help";
+} from "easyflow-v3/src/components/ef/mixins";
+import flowNode from "easyflow-v3/src/components/ef/node";
+import NodeMenu from "easyflow-v3/src/components/ef/node_menu";
+import FlowHelp from "easyflow-v3/src/components/ef/help";
 import FlowNodeForm from "./node_form";
 import lodash from "lodash-es";
-import * as ProcessPath from "@/api/craft/processPath";
+// import * as ProcessPath from "easyflow-v3/src/api/craft/processPath";
 import { reactive, ref, watch, onMounted, getCurrentInstance, defineProps } from "vue";
 
 

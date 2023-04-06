@@ -1,6 +1,6 @@
 // import { vDialogDrag, vDialogDragWidth }  from '@/utils/directives'
 // v-dialogDrag: 弹窗拖拽
-const vDialogDrag = {
+export const vDialogDrag = {
   mounted: (el, binding, vnode, oldVnode) => {
     const dialogHeaderEl = el.querySelector(".el-dialog__header");
     const dragDom = el.querySelector(".el-dialog");
@@ -75,7 +75,7 @@ const vDialogDrag = {
 }
 
 // v-dialogDragWidth: 弹窗宽度拖大 拖小
-const vDialogDragWidth = {
+export const vDialogDragWidth = {
   mounted: (el, binding, vnode, oldVnode) => {
     const dragDom = binding.value.$el.querySelector('.el-dialog')
 
@@ -96,12 +96,5 @@ const vDialogDragWidth = {
         document.onmouseup = null
       }
     }
-  }
-}
-export default {
-  install(app, options) {
-    // 配置此应用
-    app.directive('DialogDrag',vDialogDrag)
-    app.directive('DialogDragWidth', vDialogDragWidth)
   }
 }

@@ -1,0 +1,14 @@
+{
+  "name": "easyflow-v3",
+  "version": "1.1.0",
+  "description": "正式版本",
+  "main": "/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jsjdlzm",
+  "license": "ISC",
+  "dependencies": {
+    "vuedraggable": "^4.1.0"
+  }
+}

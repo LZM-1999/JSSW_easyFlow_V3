@@ -42,7 +42,7 @@
 </template>
 <script setup>
 import { onBeforeMount, reactive, ref, getCurrentInstance, watch } from "vue";
-import draggable from "vuedraggable";
+import draggable from '../../../../vuedraggable/src/vuedraggable.js'
 
 const { proxy } = getCurrentInstance();
 
