@@ -10,7 +10,9 @@
     <div class="ef-node-left"></div>
     <!-- 节点类型的图标 -->
     <div class="ef-node-left-ico flow-node-drag">
-      <el-icon :class="nodeIcoClass"><Setting :class="nodeIcoClass"/></el-icon>
+      <el-icon :class="nodeIcoClass">
+        <Setting v-if="node.ico === 'setting'" :class="nodeIcoClass"/>
+      </el-icon>
     </div>
     <!-- 节点名称 -->
     <div class="ef-node-text" :show-overflow-tooltip="true">

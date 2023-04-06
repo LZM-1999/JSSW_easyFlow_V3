@@ -3,7 +3,10 @@
     <span class="ef-node-pmenu">选择工序</span>
     <div v-for="(menu, index) in menuList" :key="menu.id">
       <span class="ef-node-pmenu" @click="setOpen(index)">
-        <el-icon><CaretBottom v-if="menu.open" /><CaretRight v-else /></el-icon>
+        <el-icon>
+          <CaretBottom v-if="menu.open" />
+          <CaretRight v-else />
+        </el-icon>
         <el-icon
           color="red"
           :class="{
@@ -56,13 +59,6 @@ const props = defineProps({
   },
 });
 
-watch(
-  () => props.menuList,
-  (val) => {
-    console.log(val);
-  },
-  { deep: true }
-);
 
 const mousePosition = reactive({
   left: -1,

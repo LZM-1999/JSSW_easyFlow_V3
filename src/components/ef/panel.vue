@@ -68,7 +68,7 @@ const props = defineProps({
   menuList:{
     type: Array,
     default(){
-      return [ { "open": true, "name": "在制品", "children": [ { "id": "127", "name": "长晶", "ico": "el-icon-setting", "disabled": false }, { "id": "128", "name": "送验", "ico": "el-icon-setting", "disabled": false }, { "id": "129", "name": "划线", "ico": "el-icon-setting", "disabled": false }, { "id": "130", "name": "截断", "ico": "el-icon-setting", "disabled": false }, { "id": "131", "name": "粘圆棒", "ico": "el-icon-setting", "disabled": false }, { "id": "132", "name": "开方", "ico": "el-icon-setting", "disabled": false }, { "id": "133", "name": "磨削", "ico": "el-icon-setting", "disabled": false }, { "id": "134", "name": "圆棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "135", "name": "方棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "137", "name": "打包", "ico": "el-icon-setting", "disabled": false }, { "id": "138", "name": "综计WMS", "ico": "el-icon-setting", "disabled": false } ] } ]
+      return reactive([ { "open": true, "name": "在制品", "children": [ { "id": "127", "name": "长晶", "ico": "setting", "disabled": false }, { "id": "128", "name": "送验", "ico": "setting", "disabled": false }, { "id": "129", "name": "划线", "ico": "setting", "disabled": false }, { "id": "130", "name": "截断", "ico": "setting", "disabled": false }, { "id": "131", "name": "粘圆棒", "ico": "setting", "disabled": false }, { "id": "132", "name": "开方", "ico": "setting", "disabled": false }, { "id": "133", "name": "磨削", "ico": "setting", "disabled": false }, { "id": "134", "name": "圆棒检验", "ico": "setting", "disabled": false }, { "id": "135", "name": "方棒检验", "ico": "setting", "disabled": false }, { "id": "137", "name": "打包", "ico": "setting", "disabled": false }, { "id": "138", "name": "综计WMS", "ico": "setting", "disabled": false } ] } ]) 
     }
   }
 });
@@ -181,7 +181,7 @@ function p_processChoice() {
   //         .map((subMenu) => ({
   //           id: subMenu.id.toString(),
   //           name: subMenu.name,
-  //           ico: "el-icon-setting",
+  //           ico: "setting",
   //           // disabled: data.nodeList.some(item => item.id.toString() === subMenu.id.toString())
   //           disabled: false,
   //         }));
@@ -195,7 +195,7 @@ function p_processChoice() {
   //   console.log('menuList',menuList)
   //   // proxy.$forceUpdate();
   // });
-  // menuList.value = [ { "open": true, "name": "在制品", "children": [ { "id": "127", "name": "长晶", "ico": "el-icon-setting", "disabled": false }, { "id": "128", "name": "送验", "ico": "el-icon-setting", "disabled": false }, { "id": "129", "name": "划线", "ico": "el-icon-setting", "disabled": false }, { "id": "130", "name": "截断", "ico": "el-icon-setting", "disabled": false }, { "id": "131", "name": "粘圆棒", "ico": "el-icon-setting", "disabled": false }, { "id": "132", "name": "开方", "ico": "el-icon-setting", "disabled": false }, { "id": "133", "name": "磨削", "ico": "el-icon-setting", "disabled": false }, { "id": "134", "name": "圆棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "135", "name": "方棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "137", "name": "打包", "ico": "el-icon-setting", "disabled": false }, { "id": "138", "name": "综计WMS", "ico": "el-icon-setting", "disabled": false } ] } ]
+  // menuList.value = [ { "open": true, "name": "在制品", "children": [ { "id": "127", "name": "长晶", "ico": "setting", "disabled": false }, { "id": "128", "name": "送验", "ico": "setting", "disabled": false }, { "id": "129", "name": "划线", "ico": "setting", "disabled": false }, { "id": "130", "name": "截断", "ico": "setting", "disabled": false }, { "id": "131", "name": "粘圆棒", "ico": "setting", "disabled": false }, { "id": "132", "name": "开方", "ico": "setting", "disabled": false }, { "id": "133", "name": "磨削", "ico": "setting", "disabled": false }, { "id": "134", "name": "圆棒检验", "ico": "setting", "disabled": false }, { "id": "135", "name": "方棒检验", "ico": "setting", "disabled": false }, { "id": "137", "name": "打包", "ico": "setting", "disabled": false }, { "id": "138", "name": "综计WMS", "ico": "setting", "disabled": false } ] } ]
 }
 // 返回唯一标识
 function getUUID() {
