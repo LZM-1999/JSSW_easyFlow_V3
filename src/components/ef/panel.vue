@@ -13,7 +13,7 @@
     <div style="display: flex;height: 600px;">
       <div style="width: 230px;border-right: 1px solid #dce3e8;">
         <FlowNodeForm ref="nodeForm" @setLineLabel="setLineLabel" @repaintEverything="repaintEverything"/>
-        <NodeMenu @addNode="addNode" ref="nodeMenu" :menuList="menuList"></NodeMenu>
+        <NodeMenu @addNode="addNode" ref="nodeMenu" :menuList="props.menuList"></NodeMenu>
       </div>
       <div id="efContainer2" ref="efContainer2" class="container" v-FlowDrag>
         <template v-for="node in data.nodeList" :key="node.id">
@@ -65,6 +65,12 @@ const props = defineProps({
     required: true,
     type: Object,
   },
+  menuList:{
+    type: Array,
+    default(){
+      return [ { "open": true, "name": "在制品", "children": [ { "id": "127", "name": "长晶", "ico": "el-icon-setting", "disabled": false }, { "id": "128", "name": "送验", "ico": "el-icon-setting", "disabled": false }, { "id": "129", "name": "划线", "ico": "el-icon-setting", "disabled": false }, { "id": "130", "name": "截断", "ico": "el-icon-setting", "disabled": false }, { "id": "131", "name": "粘圆棒", "ico": "el-icon-setting", "disabled": false }, { "id": "132", "name": "开方", "ico": "el-icon-setting", "disabled": false }, { "id": "133", "name": "磨削", "ico": "el-icon-setting", "disabled": false }, { "id": "134", "name": "圆棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "135", "name": "方棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "137", "name": "打包", "ico": "el-icon-setting", "disabled": false }, { "id": "138", "name": "综计WMS", "ico": "el-icon-setting", "disabled": false } ] } ]
+    }
+  }
 });
 
 const flowHelp = ref(null)
@@ -95,7 +101,7 @@ let activeElement = ref({
 let efContainer2 = ref(null)
 
 let zoom = ref(0.5);
-let menuList = ref([{ name: "", open: true, children: [{}] }]);
+// let menuList = ref([{ name: "", open: true, children: [{}] }]);
 
 defineExpose({
   data
@@ -161,7 +167,7 @@ const vFlowDrag = {
 onMounted(() => {
   jsplumbSetting.Container = "efContainer2";
   myJsPlumb.value = jsPlumb.getInstance();
-  p_processChoice();
+  // p_processChoice();
 });
 
 function p_processChoice() {
@@ -189,7 +195,7 @@ function p_processChoice() {
   //   console.log('menuList',menuList)
   //   // proxy.$forceUpdate();
   // });
-  menuList.value = [ { "open": true, "name": "在制品", "children": [ { "id": "127", "name": "长晶", "ico": "el-icon-setting", "disabled": false }, { "id": "128", "name": "送验", "ico": "el-icon-setting", "disabled": false }, { "id": "129", "name": "划线", "ico": "el-icon-setting", "disabled": false }, { "id": "130", "name": "截断", "ico": "el-icon-setting", "disabled": false }, { "id": "131", "name": "粘圆棒", "ico": "el-icon-setting", "disabled": false }, { "id": "132", "name": "开方", "ico": "el-icon-setting", "disabled": false }, { "id": "133", "name": "磨削", "ico": "el-icon-setting", "disabled": false }, { "id": "134", "name": "圆棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "135", "name": "方棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "137", "name": "打包", "ico": "el-icon-setting", "disabled": false }, { "id": "138", "name": "综计WMS", "ico": "el-icon-setting", "disabled": false } ] } ]
+  // menuList.value = [ { "open": true, "name": "在制品", "children": [ { "id": "127", "name": "长晶", "ico": "el-icon-setting", "disabled": false }, { "id": "128", "name": "送验", "ico": "el-icon-setting", "disabled": false }, { "id": "129", "name": "划线", "ico": "el-icon-setting", "disabled": false }, { "id": "130", "name": "截断", "ico": "el-icon-setting", "disabled": false }, { "id": "131", "name": "粘圆棒", "ico": "el-icon-setting", "disabled": false }, { "id": "132", "name": "开方", "ico": "el-icon-setting", "disabled": false }, { "id": "133", "name": "磨削", "ico": "el-icon-setting", "disabled": false }, { "id": "134", "name": "圆棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "135", "name": "方棒检验", "ico": "el-icon-setting", "disabled": false }, { "id": "137", "name": "打包", "ico": "el-icon-setting", "disabled": false }, { "id": "138", "name": "综计WMS", "ico": "el-icon-setting", "disabled": false } ] } ]
 }
 // 返回唯一标识
 function getUUID() {
